@@ -36,7 +36,7 @@ SimpleHtmlPrecompiler.prototype.apply = function (compiler) {
                   // insert the rendered html from phantomjs into the body of index.html
                   let cheerioPhantomHTML = cheerio.load(prerenderedHTML)
                   let cheerioProcessedIndexHtml = cheerio.load(processedIndexHtml)
-                  let siteWrapper = cheerioPhantomHTML('#app').html()
+                  let siteWrapper = cheerioPhantomHTML('#site-wrapper').html()
                   cheerioProcessedIndexHtml('#app').append(siteWrapper)
                   let mergedHTML = cheerioProcessedIndexHtml.root()
 
